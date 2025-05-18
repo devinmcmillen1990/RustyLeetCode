@@ -8,7 +8,7 @@ Unrolling the Loop:
 
 use crate::structs::list_node::ListNode;
 
-pub fn add_two_numbers_iteratively_loop_unroll(
+pub fn add_two_nums_iteratively_loop_unroll(
     l1: Option<Box<ListNode>>,
     l2: Option<Box<ListNode>>,
 ) -> Option<Box<ListNode>> {

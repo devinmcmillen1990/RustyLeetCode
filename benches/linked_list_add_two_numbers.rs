@@ -1,5 +1,0 @@
-// add_two_numbers_iteratively_loop_unroll
-// add_two_numbers_iteratively_mem_aligned
-// add_two_numbers_iteratively_mem_pooling
-// add_two_numbers_iteratively
-// add_two_numbers_iteratively
