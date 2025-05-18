@@ -1,16 +1,14 @@
-use crate::linked_list::medium::add_two_numbers::{
-    add_two_nums_iteratively, add_two_nums_recursively,
-};
 use crate::structs::list_node::ListNode;
 
 #[cfg(test)]
-struct TestCase {
-    l1: Vec<i32>,
-    l2: Vec<i32>,
-    expected: Vec<i32>,
+pub struct TestCase {
+    pub l1: Vec<i32>,
+    pub l2: Vec<i32>,
+    pub expected: Vec<i32>,
 }
 
-fn get_test_cases() -> Vec<TestCase> {
+#[cfg(test)]
+pub fn get_test_cases() -> Vec<TestCase> {
     vec![
         TestCase {
             l1: vec![2, 4, 3],
@@ -46,7 +44,8 @@ fn get_test_cases() -> Vec<TestCase> {
 }
 
 /// Helper function to convert a vector to a linked list.
-fn vec_to_list(vec: Vec<i32>) -> Option<Box<ListNode>> {
+#[cfg(test)]
+pub fn vec_to_list(vec: Vec<i32>) -> Option<Box<ListNode>> {
     let mut dummy_head = Box::new(ListNode::new(0));
     let mut current = &mut dummy_head;
 
@@ -69,31 +68,12 @@ fn list_to_vec(mut node: Option<Box<ListNode>>) -> Vec<i32> {
 }
 
 /// Custom assertion function to verify output.
-fn assert_linked_list_eq(actual: Option<Box<ListNode>>, expected: Vec<i32>, case_index: usize) {
+#[cfg(test)]
+pub fn assert_linked_list_eq(actual: Option<Box<ListNode>>, expected: Vec<i32>, case_index: usize) {
     let actual_vec = list_to_vec(actual);
     assert_eq!(
         actual_vec, expected,
         "Test case {} failed: Expected {:?}, got {:?}",
         case_index, expected, actual_vec
     );
-}
-
-#[test]
-fn test_add_two_nums_iteratively() {
-    for (index, case) in get_test_cases().into_iter().enumerate() {
-        let l1 = vec_to_list(case.l1);
-        let l2 = vec_to_list(case.l2);
-        let result = add_two_nums_iteratively(l1, l2);
-        assert_linked_list_eq(result, case.expected, index);
-    }
-}
-
-#[test]
-fn test_add_two_nums_recursive() {
-    for (index, case) in get_test_cases().into_iter().enumerate() {
-        let l1 = vec_to_list(case.l1);
-        let l2 = vec_to_list(case.l2);
-        let result = add_two_nums_recursively(l1, l2);
-        assert_linked_list_eq(result, case.expected, index);
-    }
 }
