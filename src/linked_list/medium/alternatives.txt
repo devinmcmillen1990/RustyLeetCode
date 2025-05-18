@@ -1,0 +1,17 @@
+NOTE: The following alternatives are sub-optimal.
+
+a. Reverse and Add (for non-reversed lists)
+    If the lists were provided in normal order, we would need to reverse them first, add the numbers using the iterative approach, 
+    and then reverse the result.
+
+        * Time Complexity: O(m + n)
+        * Space Complexity: O(m + n)
+
+b. Conversion to Integer and Addition (Not Optimal for Large Inputs)
+    1. Convert both linked lists to integers.
+    2. Add the two integers.
+    3. Convert the sum back to a linked list.
+
+    Drawbacks:
+    - Integer overflow for very large inputs.
+    - Requires O(max(m, n)) space for the conversion.

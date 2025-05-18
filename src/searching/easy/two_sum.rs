@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 /*
-1. Two Sum - Easy
+Two Sum - Easy
 
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
@@ -26,7 +26,7 @@ Constraints:
     -109 <= nums[i] <= 109
     -109 <= target <= 109
     Only one valid answer exists.
- 
+
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 */
 
