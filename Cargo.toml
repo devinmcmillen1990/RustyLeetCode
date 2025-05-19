@@ -10,6 +10,9 @@ edition = "2021"
 criterion = "0.6.0"
 
 [[bench]]
+name = "arrays_median_of_two_sorted_arrays_bench"
+harness = false
+[[bench]]
 name = "linked_list_add_two_numbers_bench"
 harness = false
 [[bench]]
