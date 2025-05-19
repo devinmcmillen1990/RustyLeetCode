@@ -7,7 +7,7 @@ Approach:           * Merge both arrays and sort the merged array.
 Time Complexity:    O(m + n) — Linear scan through both arrays.
 Space Complexity:   O(m + n) — For the merged array.
 */
-pub fn median_of_two_sorted_arrays_two_pointers_merge(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
+pub fn median_of_two_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
     let nums1_len = nums1.len();
     let nums2_len = nums2.len();
 

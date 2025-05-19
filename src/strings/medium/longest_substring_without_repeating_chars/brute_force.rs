@@ -9,7 +9,7 @@ Approach:           * Iterate over all possible substrings and check each one fo
 Time Complexity:    O(n²)
 Space Complexity:   O(n) (for the HashSet)
 */
-pub fn length_of_longest_substring_brute_force(s: String) -> i32 {
+pub fn length_of_longest_substring(s: String) -> i32 {
     let mut max_length: i32 = 0;
 
     for i in 0..s.len() {

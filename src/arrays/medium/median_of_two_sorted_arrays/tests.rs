@@ -1,3 +1,33 @@
+use super::{
+    binary_search,
+    merge_and_sort,
+    two_pointers_merge,
+};
+
+#[test]
+fn test_median_of_two_sorted_arrays_merge() {
+    for (index, case) in get_test_cases().into_iter().enumerate() {
+        let result = binary_search::median_of_two_sorted_arrays(case.nums1, case.nums2);
+        assert_median_of_two_sorted_arrays(result, case.expected, index);
+    }
+}
+
+#[test]
+fn test_median_of_two_sorted_arrays_merged_and_sorted() {
+    for (index, case) in get_test_cases().into_iter().enumerate() {
+        let result = merge_and_sort::median_of_two_sorted_arrays(case.nums1, case.nums2);
+        assert_median_of_two_sorted_arrays(result, case.expected, index);
+    }
+}
+
+#[test]
+fn test_median_of_two_sorted_arrays_two_pointers_merge() {
+    for (index, case) in get_test_cases().into_iter().enumerate() {
+        let result = two_pointers_merge::median_of_two_sorted_arrays(case.nums1, case.nums2);
+        assert_median_of_two_sorted_arrays(result, case.expected, index);
+    }
+}
+
 #[cfg(test)]
 pub struct TestCase {
     pub nums1: Vec<i32>,

@@ -3,7 +3,7 @@ use crate::structs::list_node::ListNode;
 /// add_two_nums - Iterative Solution using Two Pointers
 ///     Time Complexity: O(max(m, n)) — where m and n are the lengths of the two linked lists.
 ///     Space Complexity: O(max(m, n)) — for the resulting linked list.
-pub fn add_two_nums_iteratively(
+pub fn add_two_numbers(
     l1: Option<Box<ListNode>>,
     l2: Option<Box<ListNode>>,
 ) -> Option<Box<ListNode>> {

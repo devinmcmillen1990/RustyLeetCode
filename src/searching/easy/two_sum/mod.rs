@@ -1,4 +1,4 @@
-pub mod two_sum;
+pub mod with_hash_map;
 
 #[cfg(test)]
-mod two_sum_tests;
+mod tests;

@@ -3,7 +3,7 @@ use crate::structs::list_node::AlignedListNode;
 // TODO: Get Time/Space Complexity Update
 
 /// Using AlignedListNode with memory alignment and cache optimization
-pub fn add_two_numbers_iteratively_mem_aligned(
+pub fn add_two_numbers(
     l1: Option<Box<AlignedListNode>>,
     l2: Option<Box<AlignedListNode>>,
 ) -> Option<Box<AlignedListNode>> {
