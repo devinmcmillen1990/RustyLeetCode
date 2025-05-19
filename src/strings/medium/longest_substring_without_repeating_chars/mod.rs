@@ -1,15 +1,7 @@
-pub mod longest_substring_without_repeating_chars_brute;
-pub mod longest_substring_without_repeating_chars_sliding_window;
-pub mod longest_substring_without_repeating_chars_sliding_window_ascii;
-pub mod longest_substring_without_repeating_chars_sliding_window_linked_hashmap;
+pub mod brute_force;
+pub mod sliding_window;
+pub mod sliding_window_ascii;
+pub mod sliding_window_linked_hashmap;
 
 #[cfg(test)]
-mod longest_substring_without_repeating_chars_brute_tests;
-#[cfg(test)]
-mod longest_substring_without_repeating_chars_sliding_window_ascii_tests;
-#[cfg(test)]
-mod longest_substring_without_repeating_chars_sliding_window_linked_hashmap_tests;
-#[cfg(test)]
-mod longest_substring_without_repeating_chars_sliding_window_tests;
-#[cfg(test)]
-mod longest_substring_without_repeating_chars_tests_helpers;
+mod tests;

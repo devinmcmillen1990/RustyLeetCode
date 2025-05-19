@@ -7,7 +7,7 @@ Approach:           * Merge both arrays and sort the merged array.
 Time Complexity:    O((m + n) log(m + n)) — Due to sorting.
 Space Complexity:   O(m + n) — For the merged array.
 */
-pub fn median_of_two_sorted_arrays_merged_and_sorted(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
+pub fn median_of_two_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
     let mut merged_nums = [nums1, nums2].concat();
     merged_nums.sort_unstable();
 

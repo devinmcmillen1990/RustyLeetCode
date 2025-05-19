@@ -1,2 +1,8 @@
 1. Get a README.md for this problem
 2. Look into performance enhancements like #[inline(always)]
+3. Add section about related challenges:
+    * Median of a Row Wise Sorted Matrix
+4. Add section about Topics
+    * Array
+    * Binary Search
+    * Divide and Conquer

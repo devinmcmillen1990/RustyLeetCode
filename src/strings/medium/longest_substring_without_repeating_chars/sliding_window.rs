@@ -9,7 +9,7 @@ Approach:           * Use two pointers (left and right) to maintain a sliding wi
 Time Complexity:    O(n) — We traverse the string once.
 Space Complexity:   O(n) — HashMap stores character indices.
 */
-pub fn length_of_longest_substring_sliding_window(s: String) -> i32 {
+pub fn length_of_longest_substring(s: String) -> i32 {
     let mut char_map = HashMap::new();
     let mut left: i32 = 0;
     let mut max_len: i32 = 0;

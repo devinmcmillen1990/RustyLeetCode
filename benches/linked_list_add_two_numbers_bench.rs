@@ -1,12 +1,8 @@
 use criterion::{criterion_group, criterion_main, Criterion};
 use std::hint::black_box;
 use RustyLeetCode::{
-    linked_list::medium::{
-        add_two_numbers::add_two_numbers_iteratively::add_two_nums_iteratively,
-        add_two_numbers::add_two_numbers_iteratively_loop_unroll::add_two_nums_iteratively_loop_unroll,
-        add_two_numbers::add_two_numbers_iteratively_mem_aligned::add_two_numbers_iteratively_mem_aligned,
-        add_two_numbers::add_two_numbers_iteratively_mem_pooling::add_two_numbers_iteratively_mem_pooling,
-        add_two_numbers::add_two_numbers_recursively::add_two_nums_recursively,
+    linked_list::medium::add_two_numbers::{
+        base_iterative, base_recursive, loop_unrolled, memory_aligned, node_memory_pooling,
     },
     structs::list_node::{AlignedListNode, ListNode},
 };
@@ -20,26 +16,25 @@ fn bench_medium(c: &mut Criterion) {
 
     c.bench_function("Iterative - Medium", |b| {
         b.iter(|| {
-            let _ = add_two_nums_iteratively(black_box(l1.clone()), black_box(l2.clone()));
+            let _ = base_iterative::add_two_numbers(black_box(l1.clone()), black_box(l2.clone()));
         })
     });
 
     c.bench_function("Recursive - Medium", |b| {
         b.iter(|| {
-            let _ = add_two_nums_recursively(black_box(l1.clone()), black_box(l2.clone()));
+            let _ = base_recursive::add_two_numbers(black_box(l1.clone()), black_box(l2.clone()));
         })
     });
 
     c.bench_function("Unrolled - Medium", |b| {
         b.iter(|| {
-            let _ =
-                add_two_nums_iteratively_loop_unroll(black_box(l1.clone()), black_box(l2.clone()));
+            let _ = loop_unrolled::add_two_numbers(black_box(l1.clone()), black_box(l2.clone()));
         })
     });
 
     c.bench_function("Memory Aligned - Medium", |b| {
         b.iter(|| {
-            let _ = add_two_numbers_iteratively_mem_aligned(
+            let _ = memory_aligned::add_two_numbers(
                 black_box(aligned_l1.clone()),
                 black_box(aligned_l2.clone()),
             );
@@ -48,48 +43,44 @@ fn bench_medium(c: &mut Criterion) {
 
     c.bench_function("Memory Pooling - Medium", |b| {
         b.iter(|| {
-            let _ = add_two_numbers_iteratively_mem_pooling(
-                black_box(l1.clone()),
-                black_box(l2.clone()),
-            );
+            let _ =
+                node_memory_pooling::add_two_numbers(black_box(l1.clone()), black_box(l2.clone()));
         })
     });
 }
 
-/// Benchmark for large-sized numbers
 fn bench_large(c: &mut Criterion) {
     // TODO: Making the large_list too large causes a crash. See what we can do to get the numbers larger.
     let l1 = generate_large_list(12_000);
     let l2 = generate_large_list(12_000);
 
-    //// Associated with the Aligned-Memory Bench tests that aren't implemented for the large dataset benchmark tests.
+    // // Associated with the Aligned-Memory Bench tests that aren't implemented for the large dataset benchmark tests.
     // let aligned_l1 = convert_to_aligned(l1.clone());
     // let aligned_l2 = convert_to_aligned(l2.clone());
 
     c.bench_function("Iterative - Large", |b| {
         b.iter(|| {
-            let _ = add_two_nums_iteratively(black_box(l1.clone()), black_box(l2.clone()));
+            let _ = base_iterative::add_two_numbers(black_box(l1.clone()), black_box(l2.clone()));
         })
     });
 
-    //// Not working with large number datasets.
+    // // Not working with large number datasets.
     // c.bench_function("Recursive - Large", |b| {
     //     b.iter(|| {
-    //         let _ = add_two_nums_recursively(black_box(l1.clone()), black_box(l2.clone()));
+    //         let _ = base_recursive::add_two_numbers(black_box(l1.clone()), black_box(l2.clone()));
     //     })
     // });
 
     c.bench_function("Unrolled - Large", |b| {
         b.iter(|| {
-            let _ =
-                add_two_nums_iteratively_loop_unroll(black_box(l1.clone()), black_box(l2.clone()));
+            let _ = loop_unrolled::add_two_numbers(black_box(l1.clone()), black_box(l2.clone()));
         })
     });
 
-    //// Not working with large number datasets.
+    // // Not working with large number datasets.
     // c.bench_function("Memory Aligned - Large", |b| {
     //     b.iter(|| {
-    //         let _ = add_two_numbers_iteratively_mem_aligned(
+    //         let _ = memory_aligned::add_two_numbers(
     //             black_box(aligned_l1.clone()),
     //             black_box(aligned_l2.clone()),
     //         );
@@ -98,10 +89,8 @@ fn bench_large(c: &mut Criterion) {
 
     c.bench_function("Memory Pooling - Large", |b| {
         b.iter(|| {
-            let _ = add_two_numbers_iteratively_mem_pooling(
-                black_box(l1.clone()),
-                black_box(l2.clone()),
-            );
+            let _ =
+                node_memory_pooling::add_two_numbers(black_box(l1.clone()), black_box(l2.clone()));
         })
     });
 }

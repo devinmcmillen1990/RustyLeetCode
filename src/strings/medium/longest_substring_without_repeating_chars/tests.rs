@@ -1,3 +1,37 @@
+use super::{brute_force, sliding_window, sliding_window_ascii, sliding_window_linked_hashmap};
+
+#[test]
+fn test_length_of_longest_substring_brute_force() {
+    for (index, case) in get_test_cases().into_iter().enumerate() {
+        let result = brute_force::length_of_longest_substring(case.input);
+        assert_length_of_longest_substring(result, case.expected, index);
+    }
+}
+
+#[test]
+fn test_length_of_longest_substring_sliding_window() {
+    for (index, case) in get_test_cases().into_iter().enumerate() {
+        let result = sliding_window::length_of_longest_substring(case.input);
+        assert_length_of_longest_substring(result, case.expected, index);
+    }
+}
+
+#[test]
+fn test_length_of_longest_substring_sliding_window_ascii() {
+    for (index, case) in get_test_cases().into_iter().enumerate() {
+        let result = sliding_window_ascii::length_of_longest_substring(case.input);
+        assert_length_of_longest_substring(result, case.expected, index);
+    }
+}
+
+#[test]
+fn test_length_of_longest_substring_sliding_window_linked_hashmap() {
+    for (index, case) in get_test_cases().into_iter().enumerate() {
+        let result = sliding_window_linked_hashmap::length_of_longest_substring(case.input);
+        assert_length_of_longest_substring(result, case.expected, index);
+    }
+}
+
 #[cfg(test)]
 pub struct TestCase {
     pub input: String,

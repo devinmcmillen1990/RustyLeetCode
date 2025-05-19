@@ -8,7 +8,7 @@ Approach:           * Use two pointers (left and right) to maintain a sliding wi
 Time Complexity:    O(n) — We traverse the string once.
 Space Complexity:   O(1) (Fixed array size)
 */
-pub fn length_of_longest_substring_sliding_window_ascii(s: String) -> i32 {
+pub fn length_of_longest_substring(s: String) -> i32 {
     let mut last_seen = [-1; 256];
     let mut left: i32 = 0;
     let mut max_len: i32 = 0;

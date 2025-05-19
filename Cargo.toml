@@ -16,5 +16,8 @@ harness = false
 name = "linked_list_add_two_numbers_bench"
 harness = false
 [[bench]]
+name = "strings_longest_palindromic_substring_bench"
+harness = false
+[[bench]]
 name = "strings_longest_substrings_without_repeating_chars_bench"
 harness = false
