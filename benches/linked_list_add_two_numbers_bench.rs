@@ -2,11 +2,11 @@ use criterion::{criterion_group, criterion_main, Criterion};
 use std::hint::black_box;
 use RustyLeetCode::{
     linked_list::medium::{
-        add_two_numbers_iteratively::add_two_nums_iteratively,
-        add_two_numbers_iteratively_loop_unroll::add_two_nums_iteratively_loop_unroll,
-        add_two_numbers_iteratively_mem_aligned::add_two_numbers_iteratively_mem_aligned,
-        add_two_numbers_iteratively_mem_pooling::add_two_numbers_iteratively_mem_pooling,
-        add_two_numbers_recursively::add_two_nums_recursively,
+        add_two_numbers::add_two_numbers_iteratively::add_two_nums_iteratively,
+        add_two_numbers::add_two_numbers_iteratively_loop_unroll::add_two_nums_iteratively_loop_unroll,
+        add_two_numbers::add_two_numbers_iteratively_mem_aligned::add_two_numbers_iteratively_mem_aligned,
+        add_two_numbers::add_two_numbers_iteratively_mem_pooling::add_two_numbers_iteratively_mem_pooling,
+        add_two_numbers::add_two_numbers_recursively::add_two_nums_recursively,
     },
     structs::list_node::{AlignedListNode, ListNode},
 };
