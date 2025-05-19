@@ -6,4 +6,6 @@
     * Longest Nice Subarray (med)
     * optimal partition of string (med)
     * count complete Subarrays in an array (med)
+    * Longest Substring with At Most Two Distinct Characters (med)
+    * Longest Substring with At Most K Distinct Characters (med)
 3. There are a few cast operations happening in some of the solutions. see if we can clean these up to at least minimize the casting operations.

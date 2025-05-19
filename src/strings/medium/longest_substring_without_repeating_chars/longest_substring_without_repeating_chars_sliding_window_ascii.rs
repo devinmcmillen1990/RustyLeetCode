@@ -21,9 +21,9 @@ pub fn length_of_longest_substring_sliding_window_ascii(s: String) -> i32 {
         }
 
         // TODO: I'm concerned about this cast. See if there is a better solution to help performance.
-        let right_cast = right as i32;
-        last_seen[index] = right_cast;
-        max_len = max_len.max(right_cast - left + 1);
+        let right_casted = right as i32;
+        last_seen[index] = right_casted;
+        max_len = max_len.max(right_casted - left + 1);
     }
 
     max_len
