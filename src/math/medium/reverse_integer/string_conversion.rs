@@ -7,6 +7,7 @@ Approach:           * Convert the integer to a string.
 Time Complexity:    O(n) — String reversal is linear.
 Space Complexity:   O(n) — Extra space for the string.
 */
+#[inline(always)]
 pub fn reverse_integer(x: i32) -> i32 {
     if x == i32::MIN {
         return 0; // Explicitly handle -2147483648 as it overflows on abs()
