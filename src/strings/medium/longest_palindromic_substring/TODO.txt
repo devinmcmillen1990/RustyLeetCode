@@ -1,2 +1,6 @@
 1. Get a README.md for this problem
 2. Add section about Topics
+3. Add similar problems section:
+    * Shortest Palindrome
+    * Palindrome Permutation
+    * Palindrome Pairs
