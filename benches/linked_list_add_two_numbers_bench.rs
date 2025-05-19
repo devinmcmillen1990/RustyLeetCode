@@ -49,7 +49,6 @@ fn bench_medium(c: &mut Criterion) {
     });
 }
 
-/// Benchmark for large-sized numbers
 fn bench_large(c: &mut Criterion) {
     // TODO: Making the large_list too large causes a crash. See what we can do to get the numbers larger.
     let l1 = generate_large_list(12_000);

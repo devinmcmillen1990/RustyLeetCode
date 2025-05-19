@@ -8,7 +8,6 @@ use RustyLeetCode::strings::medium::longest_substring_without_repeating_chars::{
 const SMALL_INPUT: &str = "abcabcbb";
 const MEDIUM_INPUT: &str = "abcdefghijklmnopqrstuvwxyz";
 
-/// Benchmark for small inputs
 fn bench_small(c: &mut Criterion) {
     c.bench_function("Brute Force - Small", |b| {
         b.iter(|| {
@@ -39,7 +38,6 @@ fn bench_small(c: &mut Criterion) {
     });
 }
 
-/// Benchmark for medium inputs
 fn bench_medium(c: &mut Criterion) {
     c.bench_function("Brute Force - Medium", |b| {
         b.iter(|| {
@@ -71,7 +69,6 @@ fn bench_medium(c: &mut Criterion) {
     });
 }
 
-/// Benchmark for large inputs
 fn bench_large(c: &mut Criterion) {
     let large_input = "a".repeat(100_000);
 
