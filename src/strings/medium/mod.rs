@@ -1,1 +1,2 @@
 pub mod longest_substring_without_repeating_chars;
+pub mod longest_palindromic_substring;
