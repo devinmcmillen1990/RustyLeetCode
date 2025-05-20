@@ -1,11 +1,39 @@
 use std::{cell::RefCell, rc::Rc};
 
 use crate::{
-    binary_search_trees::easy::closest_binary_search_tree_value::{greedy_search, greedy_search_recursively},
+    binary_search_trees::easy::closest_binary_search_tree_value::{
+        greedy_search, greedy_search_recursively,
+    },
     structs::tree_node::TreeNode,
 };
 
 type Node = Option<Rc<RefCell<TreeNode>>>;
+
+#[test]
+fn test_closest_value_greedy_search() {
+    for (i, case) in get_test_cases().into_iter().enumerate() {
+        let tree = build_tree_from_vec(case.input);
+        let result = greedy_search::closest_binary_search_tree_value(tree, case.target);
+        assert_eq!(
+            result, case.expected,
+            "Test case {} failed: expected {}, got {}",
+            i, case.expected, result
+        );
+    }
+}
+
+#[test]
+fn test_closest_value_recursively() {
+    for (i, case) in get_test_cases().into_iter().enumerate() {
+        let tree = build_tree_from_vec(case.input);
+        let result = greedy_search_recursively::closest_binary_search_tree_value(tree, case.target);
+        assert_eq!(
+            result, case.expected,
+            "Test case {} failed: expected {}, got {}",
+            i, case.expected, result
+        );
+    }
+}
 
 struct TestCase {
     input: Vec<Option<i32>>, // input tree in level-order
@@ -36,32 +64,6 @@ fn get_test_cases() -> Vec<TestCase> {
             expected: 5,
         },
     ]
-}
-
-#[test]
-fn test_closest_value_greedy_search() {
-    for (i, case) in get_test_cases().into_iter().enumerate() {
-        let tree = build_tree_from_vec(case.input);
-        let result = greedy_search::closest_binary_search_tree_value(tree, case.target);
-        assert_eq!(
-            result, case.expected,
-            "Test case {} failed: expected {}, got {}",
-            i, case.expected, result
-        );
-    }
-}
-
-#[test]
-fn test_closest_value_recursively() {
-    for (i, case) in get_test_cases().into_iter().enumerate() {
-        let tree = build_tree_from_vec(case.input);
-        let result = greedy_search_recursively::closest_binary_search_tree_value(tree, case.target);
-        assert_eq!(
-            result, case.expected,
-            "Test case {} failed: expected {}, got {}",
-            i, case.expected, result
-        );
-    }
 }
 
 // Helper to build a binary tree from Vec<Option<i32>>
