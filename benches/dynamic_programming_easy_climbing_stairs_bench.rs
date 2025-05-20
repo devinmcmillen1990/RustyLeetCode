@@ -7,7 +7,7 @@ pub fn bench_medium_size_dataset(c: &mut Criterion) {
     let medium_n = 1000;
 
     c.bench_function(
-        "Climbing Stairs - LaMediumrge - Recursive with Memoization",
+        "Climbing Stairs - Medium - Recursive with Memoization",
         |b| b.iter(|| recursively_with_memoization::climb_stairs(medium_n)),
     );
 
