@@ -1,4 +1,4 @@
-use std::{cell::RefCell, collections::VecDeque, rc::Rc};
+use std::{cell::RefCell, rc::Rc};
 
 use crate::{
     binary_search_trees::easy::convert_sorted_array_to_binary_search_tree::{
@@ -6,32 +6,6 @@ use crate::{
     },
     structs::tree_node::TreeNode,
 };
-
-struct TestCase {
-    input: Vec<i32>,
-    expected: Vec<Option<i32>>, // level-order tree representation
-}
-
-fn get_test_cases() -> Vec<TestCase> {
-    vec![
-        TestCase {
-            input: vec![-10, -3, 0, 5, 9],
-            expected: vec![Some(0), Some(-10), Some(5), None, Some(-3), None, Some(9)],
-        },
-        TestCase {
-            input: vec![1, 2, 3],
-            expected: vec![Some(2), Some(1), Some(3)],
-        },
-        TestCase {
-            input: vec![],
-            expected: vec![],
-        },
-        TestCase {
-            input: vec![0],
-            expected: vec![Some(0)],
-        },
-    ]
-}
 
 #[test]
 fn test_sorted_array_to_bst_recursively() {
@@ -57,6 +31,23 @@ fn test_sorted_array_to_bst_iteratively() {
             i, case.input, in_order
         );
     }
+}
+
+struct TestCase {
+    input: Vec<i32>,
+}
+
+fn get_test_cases() -> Vec<TestCase> {
+    vec![
+        TestCase {
+            input: vec![-10, -3, 0, 5, 9],
+        },
+        TestCase {
+            input: vec![1, 2, 3],
+        },
+        TestCase { input: vec![] },
+        TestCase { input: vec![0] },
+    ]
 }
 
 fn in_order_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
