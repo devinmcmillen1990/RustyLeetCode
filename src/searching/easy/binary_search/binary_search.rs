@@ -1,9 +1,9 @@
 pub fn search(nums: Vec<i32>, target: i32) -> i32 {
-    search_recursively(nums.clone(), target, 0, nums.len())
+    search_recursively(&nums, target, 0, nums.len())
 }
 
 #[inline(always)]
-fn search_recursively(nums: Vec<i32>, target: i32, start: usize, end: usize) -> i32 {
+fn search_recursively(nums: &[i32], target: i32, start: usize, end: usize) -> i32 {
     let mid: usize = (end + start) / 2;
 
     if mid >= end {
