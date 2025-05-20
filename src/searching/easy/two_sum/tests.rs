@@ -1,4 +1,4 @@
-use crate::searching::easy::two_sum::search::two_sum;
+use crate::searching::easy::two_sum::two_sum::two_sum;
 
 #[test]
 fn test_two_sum() {

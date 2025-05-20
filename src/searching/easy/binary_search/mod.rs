@@ -1,4 +1,4 @@
-pub mod search;
+pub mod binary_search;
 
 #[cfg(test)]
 mod tests;
