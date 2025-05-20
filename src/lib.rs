@@ -5,3 +5,4 @@ pub mod math;
 pub mod searching;
 pub mod strings;
 pub mod structs;
+pub mod dynamic_programming;
