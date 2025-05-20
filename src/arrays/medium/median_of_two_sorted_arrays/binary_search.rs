@@ -13,6 +13,7 @@ pub fn median_of_two_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
     let mut nums1_runner = nums1;
     let mut nums2_runner = nums2;
 
+    // TODO: Replace the swap with a simple assignment
     if nums1_runner.len() > nums2_runner.len() {
         swap(&mut nums1_runner, &mut nums2_runner);
     }
