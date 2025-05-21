@@ -25,6 +25,9 @@ name = "dynamic_programming_fibonacci_number_bench"
 harness = false
 
 [[bench]]
+name = "graphs_find_if_path_exists_in_graph_bench"
+harness = false
+[[bench]]
 name = "graphs_find_the_town_judge_bench"
 harness = false
 

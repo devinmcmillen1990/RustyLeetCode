@@ -1,5 +1,29 @@
 use crate::math::easy::nim_game::{bottom_up_dp, mathy};
 
+#[test]
+fn test_can_win_nim_mathy() {
+    for (index, case) in get_test_cases().into_iter().enumerate() {
+        let result = mathy::can_win_nim(case.input);
+        assert_eq!(
+            result, case.expected,
+            "mathy failed at test case {}: input {}, expected {}, got {}",
+            index, case.input, case.expected, result
+        );
+    }
+}
+
+#[test]
+fn test_can_win_nim_bottom_up() {
+    for (index, case) in get_test_cases().into_iter().enumerate() {
+        let result = bottom_up_dp::can_win_nim(case.input);
+        assert_eq!(
+            result, case.expected,
+            "bottom_up failed at test case {}: input {}, expected {}, got {}",
+            index, case.input, case.expected, result
+        );
+    }
+}
+
 #[cfg(test)]
 struct TestCase {
     input: i32,
@@ -65,28 +89,4 @@ fn get_test_cases() -> Vec<TestCase> {
             expected: true,
         },
     ]
-}
-
-#[test]
-fn test_can_win_nim_mathy() {
-    for (index, case) in get_test_cases().into_iter().enumerate() {
-        let result = mathy::can_win_nim(case.input);
-        assert_eq!(
-            result, case.expected,
-            "mathy failed at test case {}: input {}, expected {}, got {}",
-            index, case.input, case.expected, result
-        );
-    }
-}
-
-#[test]
-fn test_can_win_nim_bottom_up() {
-    for (index, case) in get_test_cases().into_iter().enumerate() {
-        let result = bottom_up_dp::can_win_nim(case.input);
-        assert_eq!(
-            result, case.expected,
-            "bottom_up failed at test case {}: input {}, expected {}, got {}",
-            index, case.input, case.expected, result
-        );
-    }
 }

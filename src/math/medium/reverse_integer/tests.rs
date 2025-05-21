@@ -1,11 +1,11 @@
 use crate::math::medium::reverse_integer::{
-    base_iterative, base_recursive, divide_and_conquer, string_conversion,
+    iteratively, recursively, divide_and_conquer, string_conversion,
 };
 
 #[test]
 fn test_reverse_integer_math() {
     for (index, case) in get_test_cases().into_iter().enumerate() {
-        let result = base_iterative::reverse_integer(case.input);
+        let result = iteratively::reverse_integer(case.input);
         assert_reverse_integer(result, case.expected, index);
     }
 }
@@ -21,7 +21,7 @@ fn test_reverse_integer_string() {
 #[test]
 fn test_reverse_integer_recursive() {
     for (index, case) in get_test_cases().into_iter().enumerate() {
-        let result = base_recursive::reverse_integer(case.input);
+        let result = recursively::reverse_integer(case.input);
         assert_reverse_integer(result, case.expected, index);
     }
 }

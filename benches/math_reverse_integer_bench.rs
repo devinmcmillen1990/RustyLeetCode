@@ -1,7 +1,7 @@
 use criterion::{criterion_group, criterion_main, Criterion};
 use std::hint::black_box;
 use RustyLeetCode::math::medium::reverse_integer::{
-    base_iterative, base_recursive, divide_and_conquer, string_conversion,
+    iteratively, recursively, divide_and_conquer, string_conversion,
 };
 
 /// Generate a large input value for benchmarking
@@ -18,7 +18,7 @@ fn bench_medium(c: &mut Criterion) {
 
     c.bench_function("Math Approach - Medium", |b| {
         b.iter(|| {
-            let _ = base_iterative::reverse_integer(black_box(input));
+            let _ = iteratively::reverse_integer(black_box(input));
         })
     });
 
@@ -30,7 +30,7 @@ fn bench_medium(c: &mut Criterion) {
 
     c.bench_function("Recursive Approach - Medium", |b| {
         b.iter(|| {
-            let _ = base_recursive::reverse_integer(black_box(input));
+            let _ = recursively::reverse_integer(black_box(input));
         })
     });
 
@@ -46,7 +46,7 @@ fn bench_large(c: &mut Criterion) {
 
     c.bench_function("Math Approach - Large", |b| {
         b.iter(|| {
-            let _ = base_iterative::reverse_integer(black_box(input));
+            let _ = iteratively::reverse_integer(black_box(input));
         })
     });
 
@@ -58,7 +58,7 @@ fn bench_large(c: &mut Criterion) {
 
     c.bench_function("Recursive Approach - Large", |b| {
         b.iter(|| {
-            let _ = base_recursive::reverse_integer(black_box(input));
+            let _ = recursively::reverse_integer(black_box(input));
         })
     });
 
