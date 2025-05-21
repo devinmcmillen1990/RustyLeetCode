@@ -1,6 +1,7 @@
 use criterion::{criterion_group, criterion_main, Criterion};
 use RustyLeetCode::graphs::easy::find_the_town_judge::{
-    hashmap_based_trust_tracking, in_degree_out_degree_array, single_score_array_net_trust,
+    hashmap_based_trust_tracking, in_degree_out_degree_array, optimized_trust_score_approach,
+    single_score_array_net_trust,
 };
 
 fn generate_trust_data(n: usize) -> Vec<Vec<i32>> {
@@ -36,6 +37,15 @@ fn bench_find_judge_medium_data_size(c: &mut Criterion) {
             })
         },
     );
+
+    c.bench_function(
+        "Find Town Judge - Medium - Optimized Trust Score Approach",
+        |b| {
+            b.iter(|| {
+                optimized_trust_score_approach::find_judge(medium_n as i32, medium_data.clone())
+            })
+        },
+    );
 }
 
 fn bench_find_judge_large_data_size(c: &mut Criterion) {
@@ -54,6 +64,15 @@ fn bench_find_judge_large_data_size(c: &mut Criterion) {
     c.bench_function(
         "Find Town Judge - Large - HashMap Based Trust Tracking",
         |b| b.iter(|| hashmap_based_trust_tracking::find_judge(large_n as i32, large_data.clone())),
+    );
+
+    c.bench_function(
+        "Find Town Judge - Large - Optimized Trust Score Approach",
+        |b| {
+            b.iter(|| {
+                optimized_trust_score_approach::find_judge(large_n as i32, large_data.clone())
+            })
+        },
     );
 }
 

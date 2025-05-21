@@ -1,5 +1,6 @@
 use crate::graphs::easy::find_the_town_judge::{
-    hashmap_based_trust_tracking, in_degree_out_degree_array, single_score_array_net_trust,
+    hashmap_based_trust_tracking, in_degree_out_degree_array, optimized_trust_score_approach,
+    single_score_array_net_trust,
 };
 
 #[test]
@@ -30,6 +31,18 @@ fn test_find_judge_single_score_array_net_trust() {
 fn test_find_judge_hashmap_based_trust_tracking() {
     for (i, case) in get_test_cases().into_iter().enumerate() {
         let result = hashmap_based_trust_tracking::find_judge(case.n, case.trust.clone());
+        assert_eq!(
+            result, case.expected,
+            "Test case {} failed: expected {}, got {}",
+            i, case.expected, result
+        );
+    }
+}
+
+#[test]
+fn test_find_judge_optimized_trust_score_approach() {
+    for (i, case) in get_test_cases().into_iter().enumerate() {
+        let result = optimized_trust_score_approach::find_judge(case.n, case.trust.clone());
         assert_eq!(
             result, case.expected,
             "Test case {} failed: expected {}, got {}",
