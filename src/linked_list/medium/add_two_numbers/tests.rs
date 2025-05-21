@@ -1,8 +1,8 @@
 use crate::structs::list_node::ListNode;
 
 use super::{
-    base_iterative, loop_unrolled,
-    node_memory_pooling, base_recursive,
+    iteratively, loop_unrolled,
+    node_memory_pooling, recursively,
 };
 
 #[test]
@@ -10,7 +10,7 @@ fn test_add_two_nums_iteratively() {
     for (index, case) in get_test_cases().into_iter().enumerate() {
         let l1 = vec_to_list(case.l1);
         let l2 = vec_to_list(case.l2);
-        let result = base_iterative::add_two_numbers(l1, l2);
+        let result = iteratively::add_two_numbers(l1, l2);
         assert_linked_list_eq(result, case.expected, index);
     }
 }
@@ -20,7 +20,7 @@ fn test_add_two_nums_recursive() {
     for (index, case) in get_test_cases().into_iter().enumerate() {
         let l1 = vec_to_list(case.l1);
         let l2 = vec_to_list(case.l2);
-        let result = base_recursive::add_two_numbers(l1, l2);
+        let result = recursively::add_two_numbers(l1, l2);
         assert_linked_list_eq(result, case.expected, index);
     }
 }

@@ -2,7 +2,7 @@ use criterion::{criterion_group, criterion_main, Criterion};
 use std::hint::black_box;
 use RustyLeetCode::{
     linked_list::medium::add_two_numbers::{
-        base_iterative, base_recursive, loop_unrolled, memory_aligned, node_memory_pooling,
+        iteratively, recursively, loop_unrolled, memory_aligned, node_memory_pooling,
     },
     structs::list_node::{AlignedListNode, ListNode},
 };
@@ -16,13 +16,13 @@ fn bench_medium(c: &mut Criterion) {
 
     c.bench_function("Iterative - Medium", |b| {
         b.iter(|| {
-            let _ = base_iterative::add_two_numbers(black_box(l1.clone()), black_box(l2.clone()));
+            let _ = iteratively::add_two_numbers(black_box(l1.clone()), black_box(l2.clone()));
         })
     });
 
     c.bench_function("Recursive - Medium", |b| {
         b.iter(|| {
-            let _ = base_recursive::add_two_numbers(black_box(l1.clone()), black_box(l2.clone()));
+            let _ = recursively::add_two_numbers(black_box(l1.clone()), black_box(l2.clone()));
         })
     });
 
@@ -60,7 +60,7 @@ fn bench_large(c: &mut Criterion) {
 
     c.bench_function("Iterative - Large", |b| {
         b.iter(|| {
-            let _ = base_iterative::add_two_numbers(black_box(l1.clone()), black_box(l2.clone()));
+            let _ = iteratively::add_two_numbers(black_box(l1.clone()), black_box(l2.clone()));
         })
     });
 

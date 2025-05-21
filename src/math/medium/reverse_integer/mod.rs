@@ -1,5 +1,5 @@
-pub mod base_iterative;
-pub mod base_recursive;
+pub mod iteratively;
+pub mod recursively;
 pub mod divide_and_conquer;
 pub mod string_conversion;
 
