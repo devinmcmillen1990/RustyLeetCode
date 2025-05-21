@@ -19,6 +19,9 @@ harness = false
 name = "dynamic_programming_easy_climbing_stairs_bench"
 harness = false
 [[bench]]
+name = "dynamic_programming_fibonacci_number_bench"
+harness = false
+[[bench]]
 name = "linked_list_add_two_numbers_bench"
 harness = false
 [[bench]]
