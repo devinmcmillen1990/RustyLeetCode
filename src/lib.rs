@@ -1,5 +1,5 @@
 pub mod arrays;
-pub mod binary_search_trees;
+pub mod trees;
 pub mod dynamic_programming;
 pub mod graphs;
 pub mod linked_list;
