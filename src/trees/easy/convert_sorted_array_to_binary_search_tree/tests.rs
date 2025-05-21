@@ -1,7 +1,7 @@
 use std::{cell::RefCell, rc::Rc};
 
 use crate::{
-    binary_search_trees::easy::convert_sorted_array_to_binary_search_tree::{
+    trees::easy::convert_sorted_array_to_binary_search_tree::{
         iteratively, recursively,
     },
     structs::tree_node::TreeNode,

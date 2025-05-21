@@ -1,7 +1,7 @@
 use std::{cell::RefCell, rc::Rc};
 
 use crate::{
-    binary_search_trees::easy::closest_binary_search_tree_value::{
+    trees::easy::closest_binary_search_tree_value::{
         greedy_search, greedy_search_recursively,
     },
     structs::tree_node::TreeNode,
