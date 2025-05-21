@@ -1,25 +1,92 @@
-use crate::math::easy::nim_game::can_win::can_win_nim;
+use crate::math::easy::nim_game::{bottom_up_dp, mathy};
+
+#[cfg(test)]
+struct TestCase {
+    input: i32,
+    expected: bool,
+}
+
+fn get_test_cases() -> Vec<TestCase> {
+    vec![
+        TestCase {
+            input: 1,
+            expected: true,
+        },
+        TestCase {
+            input: 2,
+            expected: true,
+        },
+        TestCase {
+            input: 3,
+            expected: true,
+        },
+        TestCase {
+            input: 4,
+            expected: false,
+        },
+        TestCase {
+            input: 5,
+            expected: true,
+        },
+        TestCase {
+            input: 6,
+            expected: true,
+        },
+        TestCase {
+            input: 7,
+            expected: true,
+        },
+        TestCase {
+            input: 8,
+            expected: false,
+        },
+        TestCase {
+            input: 12,
+            expected: false,
+        },
+        TestCase {
+            input: 13,
+            expected: true,
+        },
+        TestCase {
+            input: 20,
+            expected: false,
+        },
+        TestCase {
+            input: 21,
+            expected: true,
+        },
+        TestCase {
+            input: 100,
+            expected: false,
+        },
+        TestCase {
+            input: 101,
+            expected: true,
+        },
+    ]
+}
 
 #[test]
-fn test_can_win_nim_cases() {
-    let test_cases = vec![
-        (1, true),
-        (2, true),
-        (3, true),
-        (4, false),
-        (5, true),
-        (6, true),
-        (7, true),
-        (8, false),
-        (12, false),
-        (13, true),
-        (20, false),
-        (21, true),
-        (100, false),
-        (101, true),
-    ];
+fn test_can_win_nim_mathy() {
+    for (index, case) in get_test_cases().into_iter().enumerate() {
+        let result = mathy::can_win_nim(case.input);
+        assert_eq!(
+            result, case.expected,
+            "mathy failed at test case {}: input {}, expected {}, got {}",
+            index, case.input, case.expected, result
+        );
+    }
+}
 
-    for (input, expected) in test_cases {
-        assert_eq!(can_win_nim(input), expected, "Failed for input: {}", input);
+#[test]
+fn test_can_win_nim_bottom_up() {
+    for (index, case) in get_test_cases().into_iter().enumerate() {
+        let result = bottom_up_dp::can_win_nim(case.input);
+        assert_eq!(
+            result, case.expected,
+            "bottom_up failed at test case {}: input {}, expected {}, got {}",
+            index, case.input, case.expected, result
+        );
     }
 }
