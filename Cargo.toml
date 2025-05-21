@@ -9,7 +9,6 @@ rand = "0.9.1"
 [dev-dependencies]
 criterion = "0.6.0"
 
-
 [[bench]]
 name = "arrays_median_of_two_sorted_arrays_bench"
 harness = false
@@ -22,6 +21,15 @@ name = "dynamic_programming_easy_climbing_stairs_bench"
 harness = false
 [[bench]]
 name = "dynamic_programming_fibonacci_number_bench"
+harness = false
+[[bench]]
+name = "dynamic_programming_interleaving_string_bench"
+harness = false
+[[bench]]
+name = "dynamic_programming_number_of_ways_to_rearrange_sticks_with_k_visible_bench"
+harness = false
+[[bench]]
+name = "dynamic_programming_tribonacci_number_bench"
 harness = false
 
 [[bench]]
