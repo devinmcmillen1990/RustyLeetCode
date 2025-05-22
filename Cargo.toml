@@ -48,6 +48,10 @@ name = "math_reverse_integer_bench"
 harness = false
 
 [[bench]]
+name = "matrices_valid_sudoku_bench"
+harness = false
+
+[[bench]]
 name = "strings_longest_palindromic_substring_bench"
 harness = false
 [[bench]]
