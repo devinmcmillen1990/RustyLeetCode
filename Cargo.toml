@@ -12,6 +12,12 @@ criterion = "0.6.0"
 [[bench]]
 name = "arrays_median_of_two_sorted_arrays_bench"
 harness = false
+[[bench]]
+name = "arrays_permutations_bench"
+harness = false
+[[bench]]
+name = "arrays_permutations2_bench"
+harness = false
 
 [[bench]]
 name = "dynamic_programming_counting_bits_bench"

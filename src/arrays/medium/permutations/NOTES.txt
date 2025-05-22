@@ -1,0 +1,1 @@
+*** Rust removed generators for coroutines. Classic generators with the yield keyword were removed October 2023

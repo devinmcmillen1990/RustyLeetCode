@@ -1,0 +1,7 @@
+1. Get a README.md for this problem
+2. Add section about Topics
+3. Add section for similar problems
+    * Next Permutation
+    * Permutations 2
+    * Permutation Sequence
+    * Combinations
