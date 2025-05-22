@@ -1,0 +1,9 @@
+pub mod recursively_with_backtracking_with_vec_for_dedups;
+pub mod recursively_with_backtracking_with_hashset_dedup;
+pub mod recursively_with_backtracking_with_in_place_swaps_and_local_hashset;
+pub mod iteratively_heap_with_hashset_dedup;
+pub mod lazy_yield_iterator;
+pub mod recursively_simple_eager_with_hashset;
+
+#[cfg(test)]
+mod tests;
